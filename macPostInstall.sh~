@@ -7,7 +7,7 @@ IFS=‘.’ read -ra  osxv <<< “$osxVersion”
 echo "Now downloading SEP for this specific for OSX: $osxVersion"
 [ “${osxv[1]}” -lt 10 ] && (curl -L -o $HOME/SEP.zip http://tinyurl.com/o35tkgw) || (curl -L -o $HOME/SEP.zip http://tinyurl.com/qb4jaj8)
 echo "Unzipping SEP..."
-#echo $PWD
+echo $PWD
 #change directory to HOME
 cd $HOME
 # unzip SEP
@@ -17,7 +17,7 @@ hdiutil attach ~/SEP/Symantec\ Endpoint\ Protection.dmg
 # go to the newly mounted disk image & open the installer
 open /Volumes/Symantec\ Endpoint\ Protection/Symantec\ Endpoint\ Protection\ Installer.app
 # install all relevant updates 
-softwareupdate -irv
+#softwareupdate -irv
 
 
 
